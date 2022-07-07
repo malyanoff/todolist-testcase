@@ -3,26 +3,29 @@ import { ITodo } from "../types/Todo";
 
 export interface ITodoStore {
   todos: ITodo[];
+  addTodo(todo:ITodo):void
+  removeTodo(id:number):void
+  completeTodo(id:number):void
 }
 
 class TodoStore implements ITodoStore {
-  todos: ITodo[] = [];
+  todos:ITodo[] = [];
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  addTodo(todo: ITodo) {
+  addTodo(todo:ITodo) {
     this.todos.push(todo);
     console.log("add", this.todos);
   }
 
-  removeTodo(id: number) {
+  removeTodo(id:number) {
     this.todos = this.todos.filter((todo) => todo.id !== id);
     console.log("remove", id);
   }
 
-  completeTodo(id: number) {
+  completeTodo(id:number) {
     this.todos = this.todos.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
