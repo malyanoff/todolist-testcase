@@ -3,7 +3,7 @@ import React from "react";
 import tdStorage from "../../store/TodoStore";
 import styles from "./TodoForm.module.scss";
 
-const TodoForm: React.FC = observer(() => {
+const TodoForm: React.FC = () => {
   const validateInput = (title: string): boolean => {
     if (title === "" || title.length > 128) {
       return false;
@@ -42,6 +42,6 @@ const TodoForm: React.FC = observer(() => {
       </div>
     </form>
   );
-});
+}
 
 export default TodoForm;
