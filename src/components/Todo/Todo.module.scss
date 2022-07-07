@@ -1,0 +1,36 @@
+.todo{
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 12px;
+    margin:12px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+   
+
+    & button{
+        background-color: #7f55f5;
+        padding: 10px 24px;
+        border-radius: 8px;
+        text-transform: none;
+        transition: all 0.3s linear;
+        background: #7f55f5;
+        cursor: pointer;
+        border: none;
+        color:white;
+        margin:0 8px;
+    }
+
+    & p{
+        white-space: normal;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .todo{
+        display: flex;
+        flex-direction: column;
+    }
+}
